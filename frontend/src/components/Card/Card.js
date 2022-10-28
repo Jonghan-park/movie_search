@@ -21,13 +21,13 @@ const Card = ({ movie }) => {
         </div>
       ) : (
         <Link
-          to={`movie/${movie.id}`}
+          to={`/movie/${movie.id}`}
           style={{ textDecoration: "none", color: "white" }}
         >
           <div className="cards">
             <img
-              src={`https://image.tmdb.org/t/p/origianl${
-                movie ? movie.original_title : ""
+              src={`https://image.tmdb.org/t/p/original${
+                movie ? movie.poster_path : ""
               }`}
               alt=""
               className="cards__img"
@@ -43,7 +43,7 @@ const Card = ({ movie }) => {
                   <i className="fas fa-star"></i>
                 </span>
               </div>
-              <div className="cards__description">
+              <div className="card__description">
                 {movie ? movie.overview.slice(0, 118) + "..." : ""}
               </div>
             </div>
